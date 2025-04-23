@@ -1,2 +1,0 @@
-# csblog
-csblog code repository
