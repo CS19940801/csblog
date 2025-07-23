@@ -1,0 +1,237 @@
+/* Global Style Override for Unified UI */
+/* 全局样式覆盖，确保统一UI风格 */
+
+/* 强制覆盖所有页面的背景和基础样式 */
+html, body {
+  background: linear-gradient(135deg, #0d1117 0%, #21262d 100%) !important;
+  color: #f0f6fc !important;
+  min-height: 100vh !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* 确保主容器透明 */
+.container, .main, .main-inner, .column {
+  background: transparent !important;
+}
+
+/* 统一顶部导航栏 */
+.header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  background: linear-gradient(135deg, #0d1117 0%, #21262d 100%) !important;
+  border-bottom: 1px solid #30363d !important;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(10px) !important;
+  height: 70px !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 2rem !important;
+}
+
+.header .site-brand-container {
+  display: flex !important;
+  align-items: center !important;
+  flex: 1 !important;
+}
+
+.header .site-meta {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.header .brand {
+  color: #f0f6fc !important;
+  text-decoration: none !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.header .site-title {
+  margin: 0 !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+}
+
+.header .site-subtitle {
+  margin: 0 0 0 1rem !important;
+  color: #8b949e !important;
+  font-size: 0.9rem !important;
+}
+
+.header .site-nav {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.header .main-menu {
+  display: flex !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 2rem !important;
+}
+
+.header .menu-item {
+  margin: 0 !important;
+}
+
+.header .menu-item a {
+  color: #f0f6fc !important;
+  text-decoration: none !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+  font-weight: 500 !important;
+}
+
+.header .menu-item a:hover {
+  background: rgba(255, 107, 107, 0.1) !important;
+  color: #ff6b6b !important;
+  transform: translateY(-2px) !important;
+}
+
+/* 为所有页面添加顶部间距 */
+body {
+  padding-top: 70px !important;
+}
+
+/* 分类和标签页面样式 */
+.category-all-page, .tag-all-page {
+  background: linear-gradient(135deg, #0d1117 0%, #21262d 100%) !important;
+  min-height: 100vh !important;
+  color: #f0f6fc !important;
+  padding-top: 90px !important;
+}
+
+.category-all-page .main,
+.tag-all-page .main {
+  background: transparent !important;
+}
+
+.category-all-page .main-inner,
+.tag-all-page .main-inner {
+  background: transparent !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 2rem !important;
+}
+
+/* 文章详情页样式 */
+.posts-expand {
+  background: linear-gradient(135deg, #0d1117 0%, #21262d 100%) !important;
+  min-height: 100vh !important;
+  color: #f0f6fc !important;
+  padding-top: 90px !important;
+}
+
+.posts-expand .main {
+  background: transparent !important;
+}
+
+.posts-expand .main-inner {
+  background: transparent !important;
+  max-width: 1000px !important;
+  margin: 0 auto !important;
+  padding: 2rem !important;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+  background: rgba(33, 38, 45, 0.8) !important;
+  border: 1px solid #30363d !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.sidebar-inner {
+  background: transparent !important;
+  color: #f0f6fc !important;
+}
+
+.site-overview {
+  background: transparent !important;
+}
+
+.site-author-name {
+  color: #ff6b6b !important;
+}
+
+.site-description {
+  color: #8b949e !important;
+}
+
+.links-of-author a {
+  color: #f0f6fc !important;
+}
+
+.links-of-author a:hover {
+  color: #4ecdc4 !important;
+}
+
+/* 页脚样式 */
+.footer {
+  background: rgba(13, 17, 23, 0.9) !important;
+  border-top: 1px solid #30363d !important;
+  color: #8b949e !important;
+}
+
+.footer-inner {
+  background: transparent !important;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 1rem !important;
+    height: 60px !important;
+  }
+  
+  .header .site-meta .brand {
+    font-size: 1.2rem !important;
+  }
+  
+  .header .site-subtitle {
+    display: none !important;
+  }
+  
+  .header .main-menu {
+    gap: 1rem !important;
+  }
+  
+  .header .menu-item a {
+    padding: 0.3rem 0.6rem !important;
+    font-size: 0.9rem !important;
+  }
+  
+  body {
+    padding-top: 60px !important;
+  }
+}
+
+/* 确保样式优先级 */
+* {
+  box-sizing: border-box !important;
+}
+
+/* 背景网格效果 */
+body::before {
+  content: '' !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px) !important;
+  background-size: 20px 20px !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
