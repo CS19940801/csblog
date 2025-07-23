@@ -1,0 +1,72 @@
+<!-- 自定义头部，用于引入现代化布局 -->
+{% if page.path === 'index.html' or not page.path %}
+<link rel="stylesheet" href="/css/custom.css">
+<script>
+// 现代化主页增强脚本
+document.addEventListener('DOMContentLoaded', function() {
+  // 添加滚动视差效果
+  const floatingElements = document.querySelectorAll('.floating-element');
+  
+  window.addEventListener('scroll', function() {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.5;
+    
+    floatingElements.forEach((element, index) => {
+      const speed = (index + 1) * 0.3;
+      element.style.transform = `translateY(${rate * speed}px) rotate(${scrolled * 0.1}deg)`;
+    });
+  });
+  
+  // 添加卡片悬停效果
+  const cards = document.querySelectorAll('.post-card, .featured-card');
+  
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-8px) scale(1.02)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0) scale(1)';
+    });
+  });
+  
+  // 添加懒加载效果
+  const images = document.querySelectorAll('img[loading="lazy"]');
+  
+  if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.style.opacity = '0';
+          img.style.transition = 'opacity 0.3s ease';
+          
+          img.onload = function() {
+            this.style.opacity = '1';
+          };
+          
+          observer.unobserve(img);
+        }
+      });
+    });
+    
+    images.forEach(img => imageObserver.observe(img));
+  }
+  
+  // 添加动态主题色彩
+  const accentColors = [
+    '#ff6b6b', // 海贼王红
+    '#4ecdc4', // EVA绿
+    '#45b7d1', // 高达蓝
+    '#f9ca24'  // 金色
+  ];
+  
+  let colorIndex = 0;
+  
+  setInterval(() => {
+    colorIndex = (colorIndex + 1) % accentColors.length;
+    document.documentElement.style.setProperty('--accent-dynamic', accentColors[colorIndex]);
+  }, 5000);
+});
+</script>
+{% endif %}

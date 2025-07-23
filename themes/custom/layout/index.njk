@@ -1,0 +1,185 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+  <!-- 特色文章横幅 -->
+  {% if site.posts.length > 0 %}
+    {% set featured_post = site.posts.first %}
+    <article class="custom-featured">
+      <div class="custom-featured-image">
+        <div class="custom-featured-anime">
+          <h3>海贼王</h3>
+          <p>ONE PIECE</p>
+        </div>
+      </div>
+      <div class="custom-featured-content">
+        <h2 class="custom-featured-title">
+          <a href="{{ url_for(featured_post.path) }}">{{ featured_post.title }}</a>
+        </h2>
+        <div class="custom-featured-meta">
+          {{ date(featured_post.date, 'YYYY年MM月DD日') }} · 
+          {% if featured_post.categories.length > 0 %}
+            {{ featured_post.categories.first.name }} · 
+          {% endif %}
+          阅读时间 5分钟
+        </div>
+        <p class="custom-featured-excerpt">
+          {{ truncate(strip_html(featured_post.content), {length: 120}) }}
+        </p>
+        <div class="custom-featured-tags">
+          {% for tag in featured_post.tags.limit(3) %}
+            <a href="{{ url_for(tag.path) }}" class="custom-tag {{ tag.name | lower | replace(' ', '') }}">{{ tag.name }}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </article>
+  {% endif %}
+
+  <!-- 文章列表 -->
+  <section class="custom-posts">
+    {% for post in page.posts %}
+      <article class="custom-post-card">
+        <div class="custom-post-icon {% if post.categories.length > 0 %}{{ post.categories.first.name | lower | replace(' ', '') }}{% else %}default{% endif %}">
+          {% if post.categories.length > 0 %}
+            {% set category = post.categories.first.name | upper %}
+            {% if category == 'GUNDAM' or category == '高达' %}
+              GUNDAM
+            {% elif category == 'EVA' or category == '新世纪福音战士' %}
+              EVA
+            {% elif category == 'CODE' or category == '编程' or category == '技术' %}
+              CODE
+            {% elif category == 'ONEPIECE' or category == '海贼王' %}
+              ONE PIECE
+            {% else %}
+              {{ category[:4] }}
+            {% endif %}
+          {% else %}
+            POST
+          {% endif %}
+        </div>
+        <div class="custom-post-content">
+          <h3 class="custom-post-title">
+            <a href="{{ url_for(post.path) }}">{{ post.title }}</a>
+          </h3>
+          <div class="custom-post-meta">
+            {{ date(post.date, 'YYYY年MM月DD日') }} · 
+            {% if post.categories.length > 0 %}
+              {{ post.categories.first.name }} · 
+            {% endif %}
+            {{ config.author }}
+          </div>
+          <p class="custom-post-excerpt">
+            {{ truncate(strip_html(post.content), {length: 100}) }}
+          </p>
+        </div>
+        <div class="custom-post-stats">
+          <div class="custom-stat">
+            <div class="custom-stat-icon views"></div>
+            <span>{{ post.views or 123 }}</span>
+          </div>
+          <div class="custom-stat">
+            <div class="custom-stat-icon comments"></div>
+            <span>{{ post.comments or 15 }}</span>
+          </div>
+          <div class="custom-stat">
+            <div class="custom-stat-icon likes"></div>
+            <span>{{ post.likes or 88 }}</span>
+          </div>
+        </div>
+      </article>
+    {% endfor %}
+  </section>
+
+  <!-- 分页导航 -->
+  {% if page.total > 1 %}
+    <nav class="custom-pagination">
+      {% if page.prev %}
+        <a href="{{ url_for(page.prev_link) }}" class="custom-pagination-prev">
+          <span class="custom-pagination-arrow">←</span>
+          <span class="custom-pagination-text">上一页</span>
+        </a>
+      {% endif %}
+      
+      <div class="custom-pagination-numbers">
+        {% if page.current > 3 %}
+          <a href="{{ url_for(page.base) }}" class="custom-pagination-number">1</a>
+          {% if page.current > 4 %}
+            <span class="custom-pagination-ellipsis">...</span>
+          {% endif %}
+        {% endif %}
+        
+        {% for i in range(max(1, page.current - 2), min(page.total, page.current + 2) + 1) %}
+          {% if i == page.current %}
+            <span class="custom-pagination-number active">{{ i }}</span>
+          {% else %}
+            <a href="{{ url_for(page.base + ('' if i == 1 else page.format.replace('%d', i))) }}" class="custom-pagination-number">{{ i }}</a>
+          {% endif %}
+        {% endfor %}
+        
+        {% if page.current < page.total - 2 %}
+          {% if page.current < page.total - 3 %}
+            <span class="custom-pagination-ellipsis">...</span>
+          {% endif %}
+          <a href="{{ url_for(page.base + page.format.replace('%d', page.total)) }}" class="custom-pagination-number">{{ page.total }}</a>
+        {% endif %}
+      </div>
+      
+      {% if page.next %}
+        <a href="{{ url_for(page.next_link) }}" class="custom-pagination-next">
+          <span class="custom-pagination-text">下一页</span>
+          <span class="custom-pagination-arrow">→</span>
+        </a>
+      {% endif %}
+    </nav>
+  {% endif %}
+{% endblock %}
+
+{% block script %}
+  <script>
+    // 文章卡片悬停效果
+    document.querySelectorAll('.custom-post-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px)';
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+      });
+    });
+
+    // 特色文章动画
+    const featuredPost = document.querySelector('.custom-featured');
+    if (featuredPost) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      });
+      
+      featuredPost.style.opacity = '0';
+      featuredPost.style.transform = 'translateY(30px)';
+      featuredPost.style.transition = 'all 0.6s ease';
+      observer.observe(featuredPost);
+    }
+
+    // 文章列表动画
+    document.querySelectorAll('.custom-post-card').forEach((card, index) => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      });
+      
+      observer.observe(card);
+    });
+  </script>
+{% endblock %}

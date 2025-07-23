@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: enjoy's 
-subtitle: 精神家园
-description: 记录&分享
-keywords:
+title: "enjoy's 精神家园"
+subtitle: '科技 × 二次元'
+description: '记录与分享的数字空间 | 专注于前端技术与动漫文化的结合'
+keywords: 前端开发,JavaScript,React,海贼王,高达,EVA,动漫,科技
 author: cs enjoy
-language: zh
-timezone: ''
+language: zh-CN
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'

@@ -1,0 +1,381 @@
+# Custom Theme Configuration
+name: custom
+version: 1.0.0
+description: 精神家园博客自定义主题
+author: cs enjoy
+
+# Menu
+menu:
+  home: / || home
+  archives: /archives/ || archive
+  tags: /tags/ || tags
+  about: /about/ || user
+
+# Sidebar
+sidebar:
+  position: right
+  display: post
+  padding: 18
+  offset: 12
+
+# Social Links
+social:
+  GitHub: https://github.com || github
+  Twitter: https://twitter.com || twitter
+  Bilibili: https://bilibili.com || video
+
+# Footer
+footer:
+  since: 2024
+  icon:
+    name: heart
+    animated: true
+    color: "#ff6b6b"
+  copyright: cs enjoy
+
+# Creative Commons
+creative_commons:
+  license: by-nc-sa
+  sidebar: true
+  post: true
+  language: deed.zh
+
+# Code Highlighting
+codeblock:
+  highlight_theme: night
+  copy_button:
+    enable: true
+    show_result: true
+    style: mac
+
+# Reading Progress
+reading_progress:
+  enable: true
+  position: top
+  color: "#ff6b6b"
+  height: 3px
+
+# Back to Top
+back2top:
+  enable: true
+  sidebar: false
+  scrollpercent: true
+
+# Local Search
+local_search:
+  enable: true
+  trigger: auto
+  top_n_per_article: 1
+  unescape: false
+  preload: false
+
+# Math
+math:
+  mathjax:
+    enable: false
+  katex:
+    enable: false
+
+# Mermaid
+mermaid:
+  enable: false
+
+# Note tag
+note:
+  style: modern
+  icons: true
+  light_bg_offset: 0
+
+# Tabs tag
+tabs:
+  transition:
+    tabs: true
+    labels: true
+
+# PDF tag
+pdf:
+  enable: false
+
+# Muse theme
+scheme: Muse
+
+# Dark mode
+darkmode: false
+
+# Animation
+motion:
+  enable: true
+  async: false
+  transition:
+    post_block: fadeIn
+    post_header: fadeInDown
+    post_body: fadeInDown
+    coll_header: fadeInLeft
+    sidebar: fadeInUp
+
+# Custom CSS
+custom_file_path:
+  style: source/css/custom.css
+
+# Favicon
+favicon:
+  small: /images/favicon-16x16.png
+  medium: /images/favicon-32x32.png
+  apple_touch_icon: /images/apple-touch-icon.png
+
+# Avatar
+avatar:
+  url: /images/avatar.png
+  rounded: true
+  rotated: false
+
+# Post meta
+post_meta:
+  item_text: true
+  created_at: true
+  updated_at:
+    enable: true
+    another_day: true
+  categories: true
+
+# Post wordcount
+symbols_count_time:
+  separated_meta: true
+  item_text_post: true
+  item_text_total: false
+
+# Related popular posts
+related_posts:
+  enable: false
+
+# Post edit
+post_edit:
+  enable: false
+
+# Show previous post and next post in post footer
+post_navigation: left
+
+# Bookmark Support
+bookmark:
+  enable: false
+
+# Reading progress bar
+reading_progress:
+  enable: true
+  position: top
+  color: "#ff6b6b"
+  height: 3px
+
+# GitHub banner
+github_banner:
+  enable: false
+
+# Font
+font:
+  enable: false
+
+# Preconnect
+preconnect: false
+
+# SEO
+seo: false
+
+# Exturl
+exturl: false
+
+# Google Analytics
+google_analytics:
+  tracking_id:
+  only_pageview: false
+
+# Baidu Analytics
+baidu_analytics:
+
+# Growingio Analytics
+growingio_analytics:
+
+# Cloudflare Analytics
+cloudflare_analytics:
+
+# Microsoft Clarity Analytics
+microsoft_clarity:
+
+# Yandex Metrica
+yandex_metrica:
+
+# Application Insights
+application_insights:
+
+# Disqus
+disqus:
+  enable: false
+  shortname:
+  count: true
+
+# DisqusJS
+disqusjs:
+  enable: false
+
+# Livere
+livere_uid:
+
+# Gitalk
+gitalk:
+  enable: false
+
+# Valine
+valine:
+  enable: false
+
+# Changyan
+changyan:
+  enable: false
+
+# Utterances
+utterances:
+  enable: false
+
+# Isso
+isso:
+
+# Commento
+commento:
+  enable: false
+
+# Hyvor Talk
+hyvor_talk:
+  enable: false
+
+# Waline
+waline:
+  enable: false
+
+# Twikoo
+twikoo:
+  enable: false
+
+# Giscus
+giscus:
+  enable: false
+
+# Artalk
+artalk:
+  enable: false
+
+# Chat Services
+chats:
+  enable: false
+
+# Tidio
+tidio:
+  enable: false
+
+# Daovoice
+daovoice: false
+
+# Crisp
+crisp:
+  enable: false
+
+# Messenger
+messenger:
+  enable: false
+
+# Chatra
+chatra:
+  enable: false
+
+# Smartsupp
+smartsupp:
+  enable: false
+
+# JivoChat
+jivochat:
+  enable: false
+
+# Tawk.to
+tawk:
+  enable: false
+
+# AddThis
+add_this_id:
+
+# Swiftype
+swiftype_key:
+
+# Algolia Search
+algolia_search:
+  enable: false
+
+# Local search
+local_search:
+  enable: true
+  trigger: auto
+  top_n_per_article: 1
+  unescape: false
+  preload: false
+
+# Lazyload
+lazyload: false
+
+# Pangu
+pangu: false
+
+# Quicklink
+quicklink:
+  enable: false
+
+# Cheers
+cheers:
+  enable: false
+
+# Fireworks
+fireworks: false
+
+# Pjax
+pjax: false
+
+# FancyBox
+fancybox: false
+
+# Medium Zoom
+mediumzoom: false
+
+# Vanilla Lazyload
+vanilla_lazyload: false
+
+# Prism
+prism: false
+
+# Mermaid
+mermaid: false
+
+# Canvas Ribbon
+canvas_ribbon:
+  enable: false
+
+# Canvas Nest
+canvas_nest:
+  enable: false
+
+# JavaScript 3D library
+three:
+  enable: false
+
+# Canvas Fluttering Ribbon
+canvas_fluttering_ribbon:
+  enable: false
+
+# Pace
+pace:
+  enable: false
+
+# Vendors
+vendors:
+  internal: local
+  plugins: local
+
+# Assets
+css: css
+js: js
+images: images

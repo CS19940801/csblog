@@ -1,0 +1,283 @@
+<svg width="1400" height="900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 渐变定义 -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#161b22;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#21262d;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1c2128;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#22272e;stop-opacity:0.95" />
+    </linearGradient>
+    
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4ecdc4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#45b7d1;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 滤镜效果 -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+    
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+    
+    <!-- 图案定义 -->
+    <pattern id="subtleGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#30363d" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <!-- 主背景 -->
+  <rect width="1400" height="900" fill="url(#bgGradient)"/>
+  <rect width="1400" height="900" fill="url(#subtleGrid)"/>
+  
+  <!-- 顶部导航栏 -->
+  <rect x="0" y="0" width="1400" height="70" fill="#161b22" opacity="0.95"/>
+  <rect x="0" y="70" width="1400" height="2" fill="url(#accentGradient)"/>
+  
+  <!-- Logo和标题区域 -->
+  <g transform="translate(40, 15)">
+    <!-- Logo -->
+    <rect x="0" y="0" width="40" height="40" rx="8" fill="#ff6b6b" filter="url(#softGlow)"/>
+    <text x="20" y="28" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="bold">CS</text>
+    
+    <!-- 博客标题 -->
+    <text x="60" y="20" fill="#f0f6fc" font-family="Arial, sans-serif" font-size="22" font-weight="600">enjoy's 精神家园</text>
+    <text x="60" y="38" fill="#7d8590" font-family="Arial, sans-serif" font-size="13">科技 × 二次元 | 记录与分享的数字空间</text>
+  </g>
+  
+  <!-- 导航菜单 -->
+  <g transform="translate(800, 20)">
+    <rect x="0" y="0" width="70" height="30" rx="6" fill="#ff6b6b" opacity="0.9"/>
+    <text x="35" y="20" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="500">首页</text>
+    
+    <rect x="85" y="0" width="70" height="30" rx="6" fill="none" stroke="#4ecdc4" stroke-width="1.5"/>
+    <text x="120" y="20" text-anchor="middle" fill="#4ecdc4" font-family="Arial, sans-serif" font-size="12" font-weight="500">分类</text>
+    
+    <rect x="170" y="0" width="70" height="30" rx="6" fill="none" stroke="#45b7d1" stroke-width="1.5"/>
+    <text x="205" y="20" text-anchor="middle" fill="#45b7d1" font-family="Arial, sans-serif" font-size="12" font-weight="500">标签</text>
+    
+    <rect x="255" y="0" width="70" height="30" rx="6" fill="none" stroke="#7d8590" stroke-width="1.5"/>
+    <text x="290" y="20" text-anchor="middle" fill="#7d8590" font-family="Arial, sans-serif" font-size="12" font-weight="500">关于</text>
+  </g>
+  
+  <!-- 搜索框 -->
+  <g transform="translate(1150, 20)">
+    <rect x="0" y="0" width="200" height="30" rx="15" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+    <text x="15" y="20" fill="#7d8590" font-family="Arial, sans-serif" font-size="12">🔍 搜索文章...</text>
+  </g>
+  
+  <!-- 主要内容区域 -->
+  <g transform="translate(40, 100)">
+    <!-- 特色文章横幅 -->
+    <rect x="0" y="0" width="900" height="200" rx="12" fill="url(#cardGradient)" stroke="#30363d" stroke-width="1"/>
+    
+    <!-- 海贼王主题横幅内容 -->
+    <g transform="translate(20, 20)">
+      <!-- 模拟海贼王图片区域 -->
+      <rect x="0" y="0" width="300" height="160" rx="8" fill="#2d1b69" opacity="0.8"/>
+      <rect x="10" y="10" width="280" height="140" rx="6" fill="#ff6b6b" opacity="0.3"/>
+      <text x="150" y="85" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">海贼王</text>
+      <text x="150" y="105" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12">ONE PIECE</text>
+      
+      <!-- 文章信息 -->
+      <text x="320" y="30" fill="#f0f6fc" font-family="Arial, sans-serif" font-size="24" font-weight="700">海贼王世界观中的科技发展脉络</text>
+      <text x="320" y="55" fill="#7d8590" font-family="Arial, sans-serif" font-size="13">2024年1月15日 · 动漫分析 · 阅读时间 8分钟</text>
+      
+      <text x="320" y="85" fill="#c9d1d9" font-family="Arial, sans-serif" font-size="14" line-height="1.5">从恶魔果实的神秘力量到贝加庞克的科学技术，探讨海贼王世界中</text>
+      <text x="320" y="105" fill="#c9d1d9" font-family="Arial, sans-serif" font-size="14" line-height="1.5">科技与超自然力量的完美融合。分析各个时代的技术发展...</text>
+      
+      <!-- 标签 -->
+      <g transform="translate(320, 125)">
+        <rect x="0" y="0" width="60" height="22" rx="11" fill="#ff6b6b" opacity="0.2"/>
+        <text x="30" y="14" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="10" font-weight="500">#海贼王</text>
+        
+        <rect x="70" y="0" width="50" height="22" rx="11" fill="#4ecdc4" opacity="0.2"/>
+        <text x="95" y="14" text-anchor="middle" fill="#4ecdc4" font-family="Arial, sans-serif" font-size="10" font-weight="500">#科技</text>
+        
+        <rect x="130" y="0" width="50" height="22" rx="11" fill="#45b7d1" opacity="0.2"/>
+        <text x="155" y="14" text-anchor="middle" fill="#45b7d1" font-family="Arial, sans-serif" font-size="10" font-weight="500">#分析</text>
+      </g>
+    </g>
+    
+    <!-- 文章列表 -->
+    <!-- 文章1 - 高达主题 -->
+    <g transform="translate(0, 230)">
+      <rect x="0" y="0" width="900" height="120" rx="8" fill="url(#cardGradient)" stroke="#30363d" stroke-width="1"/>
+      
+      <!-- 高达图片区域 -->
+      <rect x="15" y="15" width="90" height="90" rx="6" fill="#1a472a" opacity="0.8"/>
+      <rect x="20" y="20" width="80" height="80" rx="4" fill="#4ecdc4" opacity="0.3"/>
+      <text x="60" y="65" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">GUNDAM</text>
+      
+      <!-- 文章内容 -->
+      <text x="120" y="35" fill="#f0f6fc" font-family="Arial, sans-serif" font-size="18" font-weight="600">高达模型制作与Arduino编程的完美结合</text>
+      <text x="120" y="55" fill="#7d8590" font-family="Arial, sans-serif" font-size="12">2024年1月10日 · 技术分享 · cs enjoy</text>
+      <text x="120" y="80" fill="#c9d1d9" font-family="Arial, sans-serif" font-size="13">使用Arduino控制高达模型的LED灯效系统，打造科技感十足的展示效果。包含完整的硬件连接图和代码实现...</text>
+      
+      <!-- 互动数据 -->
+      <g transform="translate(750, 80)">
+        <text x="0" y="0" fill="#7d8590" font-family="Arial, sans-serif" font-size="11">👁 1.2k</text>
+        <text x="40" y="0" fill="#7d8590" font-family="Arial, sans-serif" font-size="11">💬 23</text>
+        <text x="75" y="0" fill="#7d8590" font-family="Arial, sans-serif" font-size="11">❤️ 89</text>
+      </g>
+    </g>
+    
+    <!-- 文章2 - EVA主题 -->
+    <g transform="translate(0, 370)">
+      <rect x="0" y="0" width="900" height="120" rx="8" fill="url(#cardGradient)" stroke="#30363d" stroke-width="1"/>
+      
+      <!-- EVA图片区域 -->
+      <rect x="15" y="15" width="90" height="90" rx="6" fill="#4a1a4a" opacity="0.8"/>
+      <rect x="20" y="20" width="80" height="80" rx="4" fill="#9b59b6" opacity="0.3"/>
+      <text x="60" y="65" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">EVA</text>
+      
+      <!-- 文章内容 -->
+      <text x="120" y="35" fill="#f0f6fc" font-family="Arial, sans-serif" font-size="18" font-weight="600">新世纪福音战士中的心理学与哲学思考</text>
+      <text x="120" y="55" fill="#7d8590" font-family="Arial, sans-serif" font-size="12">2024年1月5日 · 深度解析 · cs enjoy</text>
+      <text x="120" y="80" fill="#c9d1d9" font-family="Arial, sans-serif" font-size="13">从心理学角度分析EVA中角色的内心世界，探讨庵野秀明想要表达的哲学思想和社会议题...</text>
+      
+      <!-- 互动数据 -->
+      <g transform="translate(750, 80)">
+        <text x="0" y="0" fill="#7d8590" font-family="Arial, sans-serif" font-size="11">👁 2.1k</text>
+        <text x="40" y="0" fill="#7d8590" font-family="Arial, sans-serif" font-size="11">💬 45</text>
+        <text x="75" y="0" fill="#7d8590" font-family="Arial, sans-serif" font-size="11">❤️ 156</text>
+      </g>
+    </g>
+    
+    <!-- 文章3 - 技术主题 -->
+    <g transform="translate(0, 510)">
+      <rect x="0" y="0" width="900" height="120" rx="8" fill="url(#cardGradient)" stroke="#30363d" stroke-width="1"/>
+      
+      <!-- 技术图片区域 -->
+      <rect x="15" y="15" width="90" height="90" rx="6" fill="#1a3a4a" opacity="0.8"/>
+      <rect x="20" y="20" width="80" height="80" rx="4" fill="#45b7d1" opacity="0.3"/>
+      <text x="60" y="65" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">CODE</text>
+      
+      <!-- 文章内容 -->
+      <text x="120" y="35" fill="#f0f6fc" font-family="Arial, sans-serif" font-size="18" font-weight="600">使用Three.js重现经典动漫场景</text>
+      <text x="120" y="55" fill="#7d8590" font-family="Arial, sans-serif" font-size="12">2024年1月1日 · 前端开发 · cs enjoy</text>
+      <text x="120" y="80" fill="#c9d1d9" font-family="Arial, sans-serif" font-size="13">利用WebGL和Three.js技术，在浏览器中重现动漫经典场景。包含完整的代码实现和性能优化技巧...</text>
+      
+      <!-- 互动数据 -->
+      <g transform="translate(750, 80)">
+        <text x="0" y="0" fill="#7d8590" font-family="Arial, sans-serif" font-size="11">👁 3.5k</text>
+        <text x="40" y="0" fill="#7d8590" font-family="Arial, sans-serif" font-size="11">💬 67</text>
+        <text x="75" y="0" fill="#7d8590" font-family="Arial, sans-serif" font-size="11">❤️ 234</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- 右侧边栏 -->
+  <g transform="translate(980, 100)">
+    <!-- 个人信息卡片 -->
+    <rect x="0" y="0" width="360" height="180" rx="12" fill="url(#cardGradient)" stroke="#30363d" stroke-width="1"/>
+    
+    <!-- 头像区域 -->
+    <g transform="translate(30, 30)">
+      <circle cx="40" cy="40" r="35" fill="#21262d" stroke="url(#accentGradient)" stroke-width="3"/>
+      <circle cx="40" cy="40" r="30" fill="#ff6b6b" opacity="0.8"/>
+      <text x="40" y="48" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="20" font-weight="bold">享</text>
+      
+      <!-- 个人信息 -->
+      <text x="100" y="25" fill="#f0f6fc" font-family="Arial, sans-serif" font-size="18" font-weight="600">cs enjoy</text>
+      <text x="100" y="45" fill="#7d8590" font-family="Arial, sans-serif" font-size="13">全栈开发者 | 二次元爱好者</text>
+      <text x="100" y="65" fill="#c9d1d9" font-family="Arial, sans-serif" font-size="12">专注于前端技术与动漫文化的结合</text>
+    </g>
+    
+    <!-- 统计数据 -->
+    <g transform="translate(30, 120)">
+      <g>
+        <text x="0" y="0" fill="#f0f6fc" font-family="Arial, sans-serif" font-size="16" font-weight="600">42</text>
+        <text x="0" y="18" fill="#7d8590" font-family="Arial, sans-serif" font-size="11">文章</text>
+      </g>
+      <g transform="translate(80, 0)">
+        <text x="0" y="0" fill="#f0f6fc" font-family="Arial, sans-serif" font-size="16" font-weight="600">1.2k</text>
+        <text x="0" y="18" fill="#7d8590" font-family="Arial, sans-serif" font-size="11">关注者</text>
+      </g>
+      <g transform="translate(160, 0)">
+        <text x="0" y="0" fill="#f0f6fc" font-family="Arial, sans-serif" font-size="16" font-weight="600">89</text>
+        <text x="0" y="18" fill="#7d8590" font-family="Arial, sans-serif" font-size="11">关注中</text>
+      </g>
+    </g>
+    
+    <!-- 热门标签 -->
+    <g transform="translate(0, 210)">
+      <rect x="0" y="0" width="360" height="150" rx="12" fill="url(#cardGradient)" stroke="#30363d" stroke-width="1"/>
+      
+      <text x="20" y="30" fill="#f0f6fc" font-family="Arial, sans-serif" font-size="16" font-weight="600">热门标签</text>
+      
+      <!-- 标签云 -->
+      <g transform="translate(20, 50)">
+        <rect x="0" y="0" width="70" height="28" rx="14" fill="#ff6b6b" opacity="0.2" stroke="#ff6b6b" stroke-width="1"/>
+        <text x="35" y="18" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="12" font-weight="500">海贼王</text>
+        
+        <rect x="80" y="0" width="55" height="28" rx="14" fill="#4ecdc4" opacity="0.2" stroke="#4ecdc4" stroke-width="1"/>
+        <text x="107" y="18" text-anchor="middle" fill="#4ecdc4" font-family="Arial, sans-serif" font-size="12" font-weight="500">高达</text>
+        
+        <rect x="145" y="0" width="45" height="28" rx="14" fill="#9b59b6" opacity="0.2" stroke="#9b59b6" stroke-width="1"/>
+        <text x="167" y="18" text-anchor="middle" fill="#9b59b6" font-family="Arial, sans-serif" font-size="12" font-weight="500">EVA</text>
+        
+        <rect x="0" y="40" width="80" height="28" rx="14" fill="#45b7d1" opacity="0.2" stroke="#45b7d1" stroke-width="1"/>
+        <text x="40" y="58" text-anchor="middle" fill="#45b7d1" font-family="Arial, sans-serif" font-size="12" font-weight="500">JavaScript</text>
+        
+        <rect x="90" y="40" width="60" height="28" rx="14" fill="#f39c12" opacity="0.2" stroke="#f39c12" stroke-width="1"/>
+        <text x="120" y="58" text-anchor="middle" fill="#f39c12" font-family="Arial, sans-serif" font-size="12" font-weight="500">React</text>
+        
+        <rect x="160" y="40" width="70" height="28" rx="14" fill="#e74c3c" opacity="0.2" stroke="#e74c3c" stroke-width="1"/>
+        <text x="195" y="58" text-anchor="middle" fill="#e74c3c" font-family="Arial, sans-serif" font-size="12" font-weight="500">Three.js</text>
+      </g>
+    </g>
+    
+    <!-- 社交链接 -->
+    <g transform="translate(0, 390)">
+      <rect x="0" y="0" width="360" height="120" rx="12" fill="url(#cardGradient)" stroke="#30363d" stroke-width="1"/>
+      
+      <text x="20" y="30" fill="#f0f6fc" font-family="Arial, sans-serif" font-size="16" font-weight="600">社交链接</text>
+      
+      <!-- 社交按钮 -->
+      <g transform="translate(20, 50)">
+        <rect x="0" y="0" width="100" height="35" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+        <text x="15" y="23" fill="#f0f6fc" font-family="Arial, sans-serif" font-size="12" font-weight="500">🐙 GitHub</text>
+        
+        <rect x="110" y="0" width="100" height="35" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+        <text x="125" y="23" fill="#f0f6fc" font-family="Arial, sans-serif" font-size="12" font-weight="500">🐦 Twitter</text>
+        
+        <rect x="220" y="0" width="100" height="35" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+        <text x="235" y="23" fill="#f0f6fc" font-family="Arial, sans-serif" font-size="12" font-weight="500">📺 Bilibili</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- 底部装饰 -->
+  <g transform="translate(0, 850)">
+    <rect x="0" y="0" width="1400" height="50" fill="#0d1117" opacity="0.8"/>
+    <rect x="0" y="0" width="1400" height="2" fill="url(#accentGradient)" opacity="0.6"/>
+    <text x="700" y="30" text-anchor="middle" fill="#7d8590" font-family="Arial, sans-serif" font-size="12">Powered by Hexo + NexT | 用代码编织二次元梦想 © 2024 cs enjoy</text>
+  </g>
+  
+  <!-- 浮动装饰元素 -->
+  <g opacity="0.1">
+    <!-- 几何装饰 -->
+    <circle cx="1300" cy="200" r="3" fill="#ff6b6b" filter="url(#glow)"/>
+    <circle cx="1320" cy="350" r="2" fill="#4ecdc4" filter="url(#glow)"/>
+    <circle cx="1280" cy="500" r="4" fill="#45b7d1" filter="url(#glow)"/>
+    
+    <!-- 连接线 -->
+    <path d="M 1300 200 Q 1310 275 1320 350 Q 1300 425 1280 500" stroke="#30363d" stroke-width="1" fill="none" opacity="0.5"/>
+  </g>
+</svg>

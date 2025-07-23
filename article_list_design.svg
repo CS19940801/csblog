@@ -1,0 +1,253 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- 定义渐变和滤镜 -->
+  <defs>
+    <!-- 背景渐变 -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#161b22;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#21262d;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 卡片渐变 -->
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1c2128;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#22272e;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 动漫主题色渐变 -->
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4ecdc4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#45b7d1;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 阴影滤镜 -->
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+    
+    <!-- 发光效果 -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 主背景 -->
+  <rect width="1400" height="900" fill="url(#bgGradient)"/>
+  
+  <!-- 网格背景 -->
+  <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+    <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#30363d" stroke-width="1" opacity="0.3"/>
+  </pattern>
+  <rect width="1400" height="900" fill="url(#grid)"/>
+  
+  <!-- 顶部导航栏 -->
+  <rect x="0" y="0" width="1400" height="70" fill="rgba(22, 27, 34, 0.95)" stroke="url(#accentGradient)" stroke-width="2"/>
+  
+  <!-- Logo -->
+  <rect x="40" y="15" width="40" height="40" rx="8" fill="#ff6b6b" filter="url(#glow)"/>
+  <text x="60" y="38" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">cs</text>
+  
+  <!-- 标题 -->
+  <text x="100" y="32" fill="#f0f6fc" font-family="Arial, sans-serif" font-size="22" font-weight="600">enjoy's 精神家园</text>
+  <text x="100" y="50" fill="#7d8590" font-family="Arial, sans-serif" font-size="13">现代化动漫技术博客</text>
+  
+  <!-- 导航菜单 -->
+  <rect x="500" y="20" width="60" height="30" rx="6" fill="#ff6b6b" opacity="0.9"/>
+  <text x="530" y="38" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="500">首页</text>
+  
+  <rect x="580" y="20" width="60" height="30" rx="6" fill="none" stroke="#4ecdc4" stroke-width="1.5"/>
+  <text x="610" y="38" text-anchor="middle" fill="#4ecdc4" font-family="Arial, sans-serif" font-size="12" font-weight="500">分类</text>
+  
+  <rect x="660" y="20" width="60" height="30" rx="6" fill="none" stroke="#45b7d1" stroke-width="1.5"/>
+  <text x="690" y="38" text-anchor="middle" fill="#45b7d1" font-family="Arial, sans-serif" font-size="12" font-weight="500">标签</text>
+  
+  <rect x="740" y="20" width="60" height="30" rx="6" fill="none" stroke="#7d8590" stroke-width="1.5"/>
+  <text x="770" y="38" text-anchor="middle" fill="#7d8590" font-family="Arial, sans-serif" font-size="12" font-weight="500">关于</text>
+  
+  <!-- 搜索框 -->
+  <rect x="1160" y="20" width="200" height="30" rx="15" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+  <text x="1175" y="38" fill="#7d8590" font-family="Arial, sans-serif" font-size="12">搜索文章...</text>
+  
+  <!-- 面包屑导航 -->
+  <text x="40" y="110" fill="#7d8590" font-family="Arial, sans-serif" font-size="14">首页 > 分类 > 动漫分析</text>
+  
+  <!-- 页面标题 -->
+  <text x="40" y="140" fill="#f0f6fc" font-family="Arial, sans-serif" font-size="28" font-weight="700">动漫分析</text>
+  <text x="40" y="165" fill="#c9d1d9" font-family="Arial, sans-serif" font-size="16">深度解析动漫作品中的技术与哲学思考</text>
+  
+  <!-- 主要内容区域 -->
+  <g transform="translate(40, 190)">
+    
+    <!-- 文章列表 -->
+    <g id="articleList">
+      
+      <!-- 文章卡片 1 -->
+      <rect x="0" y="0" width="900" height="120" rx="12" fill="url(#cardGradient)" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+      
+      <!-- 文章标题 -->
+      <text x="20" y="30" fill="#f0f6fc" font-family="Arial, sans-serif" font-size="20" font-weight="600">海贼王世界观中的科技发展脉络</text>
+      
+      <!-- 文章元信息 -->
+      <text x="20" y="50" fill="#7d8590" font-family="Arial, sans-serif" font-size="12">2024年1月15日 • 动漫分析 • 阅读时间 8分钟</text>
+      
+      <!-- 文章摘要 -->
+      <text x="20" y="75" fill="#c9d1d9" font-family="Arial, sans-serif" font-size="14">从恶魔果实的神秘力量到贝加庞克的科学技术，探讨海贼王世界中科技与超自然力量的完美融合...</text>
+      
+      <!-- 标签 -->
+      <rect x="20" y="90" width="50" height="20" rx="10" fill="rgba(255, 107, 107, 0.2)" stroke="rgba(255, 107, 107, 0.3)" stroke-width="1"/>
+      <text x="45" y="102" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="10" font-weight="500">海贼王</text>
+      
+      <rect x="80" y="90" width="40" height="20" rx="10" fill="rgba(78, 205, 196, 0.2)" stroke="rgba(78, 205, 196, 0.3)" stroke-width="1"/>
+      <text x="100" y="102" text-anchor="middle" fill="#4ecdc4" font-family="Arial, sans-serif" font-size="10" font-weight="500">科技</text>
+      
+      <rect x="130" y="90" width="40" height="20" rx="10" fill="rgba(69, 183, 209, 0.2)" stroke="rgba(69, 183, 209, 0.3)" stroke-width="1"/>
+      <text x="150" y="102" text-anchor="middle" fill="#45b7d1" font-family="Arial, sans-serif" font-size="10" font-weight="500">分析</text>
+      
+      <!-- 阅读更多按钮 -->
+      <rect x="800" y="85" width="80" height="25" rx="12" fill="rgba(255, 107, 107, 0.1)" stroke="#ff6b6b" stroke-width="1"/>
+      <text x="840" y="100" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="12" font-weight="500">阅读更多</text>
+      
+      <!-- 文章卡片 2 -->
+      <rect x="0" y="140" width="900" height="120" rx="12" fill="url(#cardGradient)" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+      
+      <text x="20" y="170" fill="#f0f6fc" font-family="Arial, sans-serif" font-size="20" font-weight="600">高达模型制作与Arduino编程的完美结合</text>
+      <text x="20" y="190" fill="#7d8590" font-family="Arial, sans-serif" font-size="12">2024年2月20日 • 项目实战 • 阅读时间 12分钟</text>
+      <text x="20" y="215" fill="#c9d1d9" font-family="Arial, sans-serif" font-size="14">将现实世界的编程技术与动漫模型制作相结合，打造智能化的高达模型展示系统...</text>
+      
+      <rect x="20" y="230" width="40" height="20" rx="10" fill="rgba(69, 183, 209, 0.2)" stroke="rgba(69, 183, 209, 0.3)" stroke-width="1"/>
+      <text x="40" y="242" text-anchor="middle" fill="#45b7d1" font-family="Arial, sans-serif" font-size="10" font-weight="500">高达</text>
+      
+      <rect x="70" y="230" width="50" height="20" rx="10" fill="rgba(78, 205, 196, 0.2)" stroke="rgba(78, 205, 196, 0.3)" stroke-width="1"/>
+      <text x="95" y="242" text-anchor="middle" fill="#4ecdc4" font-family="Arial, sans-serif" font-size="10" font-weight="500">Arduino</text>
+      
+      <rect x="130" y="230" width="30" height="20" rx="10" fill="rgba(243, 156, 18, 0.2)" stroke="rgba(243, 156, 18, 0.3)" stroke-width="1"/>
+      <text x="145" y="242" text-anchor="middle" fill="#f39c12" font-family="Arial, sans-serif" font-size="10" font-weight="500">DIY</text>
+      
+      <rect x="800" y="225" width="80" height="25" rx="12" fill="rgba(255, 107, 107, 0.1)" stroke="#ff6b6b" stroke-width="1"/>
+      <text x="840" y="240" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="12" font-weight="500">阅读更多</text>
+      
+      <!-- 文章卡片 3 -->
+      <rect x="0" y="280" width="900" height="120" rx="12" fill="url(#cardGradient)" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+      
+      <text x="20" y="310" fill="#f0f6fc" font-family="Arial, sans-serif" font-size="20" font-weight="600">EVA中的心理学与哲学思考</text>
+      <text x="20" y="330" fill="#7d8590" font-family="Arial, sans-serif" font-size="12">2024年3月10日 • 动漫分析 • 阅读时间 15分钟</text>
+      <text x="20" y="355" fill="#c9d1d9" font-family="Arial, sans-serif" font-size="14">深入分析新世纪福音战士中的心理学理论和哲学思辨，探讨庵野秀明的创作理念...</text>
+      
+      <rect x="20" y="370" width="30" height="20" rx="10" fill="rgba(155, 89, 182, 0.2)" stroke="rgba(155, 89, 182, 0.3)" stroke-width="1"/>
+      <text x="35" y="382" text-anchor="middle" fill="#9b59b6" font-family="Arial, sans-serif" font-size="10" font-weight="500">EVA</text>
+      
+      <rect x="60" y="370" width="50" height="20" rx="10" fill="rgba(231, 76, 60, 0.2)" stroke="rgba(231, 76, 60, 0.3)" stroke-width="1"/>
+      <text x="85" y="382" text-anchor="middle" fill="#e74c3c" font-family="Arial, sans-serif" font-size="10" font-weight="500">心理学</text>
+      
+      <rect x="120" y="370" width="40" height="20" rx="10" fill="rgba(52, 152, 219, 0.2)" stroke="rgba(52, 152, 219, 0.3)" stroke-width="1"/>
+      <text x="140" y="382" text-anchor="middle" fill="#3498db" font-family="Arial, sans-serif" font-size="10" font-weight="500">哲学</text>
+      
+      <rect x="800" y="365" width="80" height="25" rx="12" fill="rgba(255, 107, 107, 0.1)" stroke="#ff6b6b" stroke-width="1"/>
+      <text x="840" y="380" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="12" font-weight="500">阅读更多</text>
+      
+    </g>
+    
+    <!-- 分页导航 -->
+    <g transform="translate(0, 430)">
+      <rect x="350" y="0" width="40" height="35" rx="6" fill="rgba(125, 133, 144, 0.2)" stroke="#7d8590" stroke-width="1"/>
+      <text x="370" y="22" text-anchor="middle" fill="#7d8590" font-family="Arial, sans-serif" font-size="14">‹</text>
+      
+      <rect x="400" y="0" width="40" height="35" rx="6" fill="#ff6b6b"/>
+      <text x="420" y="22" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="600">1</text>
+      
+      <rect x="450" y="0" width="40" height="35" rx="6" fill="rgba(240, 246, 252, 0.1)" stroke="#30363d" stroke-width="1"/>
+      <text x="470" y="22" text-anchor="middle" fill="#c9d1d9" font-family="Arial, sans-serif" font-size="14">2</text>
+      
+      <rect x="500" y="0" width="40" height="35" rx="6" fill="rgba(240, 246, 252, 0.1)" stroke="#30363d" stroke-width="1"/>
+      <text x="520" y="22" text-anchor="middle" fill="#c9d1d9" font-family="Arial, sans-serif" font-size="14">3</text>
+      
+      <rect x="550" y="0" width="40" height="35" rx="6" fill="rgba(240, 246, 252, 0.1)" stroke="#30363d" stroke-width="1"/>
+      <text x="570" y="22" text-anchor="middle" fill="#c9d1d9" font-family="Arial, sans-serif" font-size="14">›</text>
+    </g>
+    
+  </g>
+  
+  <!-- 右侧边栏 -->
+  <g transform="translate(980, 190)">
+    
+    <!-- 分类筛选器 -->
+    <rect x="0" y="0" width="360" height="180" rx="12" fill="url(#cardGradient)" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+    
+    <text x="20" y="30" fill="#f0f6fc" font-family="Arial, sans-serif" font-size="16" font-weight="600">分类筛选</text>
+    
+    <!-- 分类选项 -->
+    <rect x="20" y="45" width="80" height="25" rx="12" fill="rgba(255, 107, 107, 0.2)" stroke="#ff6b6b" stroke-width="1"/>
+    <text x="60" y="60" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="11" font-weight="500">动漫分析 (8)</text>
+    
+    <rect x="110" y="45" width="80" height="25" rx="12" fill="rgba(78, 205, 196, 0.1)" stroke="#4ecdc4" stroke-width="1"/>
+    <text x="150" y="60" text-anchor="middle" fill="#4ecdc4" font-family="Arial, sans-serif" font-size="11" font-weight="500">项目实战 (5)</text>
+    
+    <rect x="200" y="45" width="80" height="25" rx="12" fill="rgba(69, 183, 209, 0.1)" stroke="#45b7d1" stroke-width="1"/>
+    <text x="240" y="60" text-anchor="middle" fill="#45b7d1" font-family="Arial, sans-serif" font-size="11" font-weight="500">技术分享 (12)</text>
+    
+    <rect x="20" y="80" width="80" height="25" rx="12" fill="rgba(155, 89, 182, 0.1)" stroke="#9b59b6" stroke-width="1"/>
+    <text x="60" y="95" text-anchor="middle" fill="#9b59b6" font-family="Arial, sans-serif" font-size="11" font-weight="500">生活随笔 (3)</text>
+    
+    <!-- 排序选项 -->
+    <text x="20" y="130" fill="#c9d1d9" font-family="Arial, sans-serif" font-size="14" font-weight="500">排序方式</text>
+    
+    <rect x="20" y="140" width="60" height="25" rx="12" fill="rgba(255, 107, 107, 0.2)" stroke="#ff6b6b" stroke-width="1"/>
+    <text x="50" y="155" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="11" font-weight="500">最新</text>
+    
+    <rect x="90" y="140" width="60" height="25" rx="12" fill="rgba(78, 205, 196, 0.1)" stroke="#4ecdc4" stroke-width="1"/>
+    <text x="120" y="155" text-anchor="middle" fill="#4ecdc4" font-family="Arial, sans-serif" font-size="11" font-weight="500">最热</text>
+    
+    <rect x="160" y="140" width="60" height="25" rx="12" fill="rgba(69, 183, 209, 0.1)" stroke="#45b7d1" stroke-width="1"/>
+    <text x="190" y="155" text-anchor="middle" fill="#45b7d1" font-family="Arial, sans-serif" font-size="11" font-weight="500">随机</text>
+    
+    <!-- 热门标签云 -->
+    <rect x="0" y="200" width="360" height="150" rx="12" fill="url(#cardGradient)" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+    
+    <text x="20" y="230" fill="#f0f6fc" font-family="Arial, sans-serif" font-size="16" font-weight="600">热门标签</text>
+    
+    <!-- 标签云 -->
+    <rect x="20" y="245" width="50" height="20" rx="10" fill="rgba(255, 107, 107, 0.2)" stroke="rgba(255, 107, 107, 0.3)" stroke-width="1"/>
+    <text x="45" y="257" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="10" font-weight="500">海贼王</text>
+    
+    <rect x="80" y="245" width="40" height="20" rx="10" fill="rgba(78, 205, 196, 0.2)" stroke="rgba(78, 205, 196, 0.3)" stroke-width="1"/>
+    <text x="100" y="257" text-anchor="middle" fill="#4ecdc4" font-family="Arial, sans-serif" font-size="10" font-weight="500">React</text>
+    
+    <rect x="130" y="245" width="30" height="20" rx="10" fill="rgba(155, 89, 182, 0.2)" stroke="rgba(155, 89, 182, 0.3)" stroke-width="1"/>
+    <text x="145" y="257" text-anchor="middle" fill="#9b59b6" font-family="Arial, sans-serif" font-size="10" font-weight="500">EVA</text>
+    
+    <rect x="170" y="245" width="40" height="20" rx="10" fill="rgba(69, 183, 209, 0.2)" stroke="rgba(69, 183, 209, 0.3)" stroke-width="1"/>
+    <text x="190" y="257" text-anchor="middle" fill="#45b7d1" font-family="Arial, sans-serif" font-size="10" font-weight="500">高达</text>
+    
+    <rect x="220" y="245" width="50" height="20" rx="10" fill="rgba(243, 156, 18, 0.2)" stroke="rgba(243, 156, 18, 0.3)" stroke-width="1"/>
+    <text x="245" y="257" text-anchor="middle" fill="#f39c12" font-family="Arial, sans-serif" font-size="10" font-weight="500">Arduino</text>
+    
+    <rect x="20" y="275" width="60" height="20" rx="10" fill="rgba(231, 76, 60, 0.2)" stroke="rgba(231, 76, 60, 0.3)" stroke-width="1"/>
+    <text x="50" y="287" text-anchor="middle" fill="#e74c3c" font-family="Arial, sans-serif" font-size="10" font-weight="500">JavaScript</text>
+    
+    <rect x="90" y="275" width="40" height="20" rx="10" fill="rgba(46, 204, 113, 0.2)" stroke="rgba(46, 204, 113, 0.3)" stroke-width="1"/>
+    <text x="110" y="287" text-anchor="middle" fill="#2ecc71" font-family="Arial, sans-serif" font-size="10" font-weight="500">Node.js</text>
+    
+    <rect x="140" y="275" width="40" height="20" rx="10" fill="rgba(52, 152, 219, 0.2)" stroke="rgba(52, 152, 219, 0.3)" stroke-width="1"/>
+    <text x="160" y="287" text-anchor="middle" fill="#3498db" font-family="Arial, sans-serif" font-size="10" font-weight="500">哲学</text>
+    
+    <rect x="190" y="275" width="50" height="20" rx="10" fill="rgba(142, 68, 173, 0.2)" stroke="rgba(142, 68, 173, 0.3)" stroke-width="1"/>
+    <text x="215" y="287" text-anchor="middle" fill="#8e44ad" font-family="Arial, sans-serif" font-size="10" font-weight="500">心理学</text>
+    
+    <rect x="20" y="305" width="40" height="20" rx="10" fill="rgba(230, 126, 34, 0.2)" stroke="rgba(230, 126, 34, 0.3)" stroke-width="1"/>
+    <text x="40" y="317" text-anchor="middle" fill="#e67e22" font-family="Arial, sans-serif" font-size="10" font-weight="500">CSS</text>
+    
+    <rect x="70" y="305" width="50" height="20" rx="10" fill="rgba(241, 196, 15, 0.2)" stroke="rgba(241, 196, 15, 0.3)" stroke-width="1"/>
+    <text x="95" y="317" text-anchor="middle" fill="#f1c40f" font-family="Arial, sans-serif" font-size="10" font-weight="500">Three.js</text>
+    
+  </g>
+  
+  <!-- 页脚 -->
+  <rect x="0" y="850" width="1400" height="50" fill="rgba(22, 27, 34, 0.8)"/>
+  <text x="700" y="878" text-anchor="middle" fill="#7d8590" font-family="Arial, sans-serif" font-size="12">Powered by Hexo + NexT | 现代化动漫技术博客 © 2024 cs enjoy</text>
+  
+</svg>
